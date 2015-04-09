@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  #get 'comments/new'
+
+  #get 'comments/create'
+
+  resources :comments
+
   resources :posts
   
   root 'posts#index'
