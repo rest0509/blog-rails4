@@ -1,14 +1,31 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @post.title %>
+  <h1>Title:
+  <%= @post.title %></h1>
+</p>
+
+<p><h1>
+  <strong>Content:</strong>
+  <%= @post.content %></h1>
 </p>
 
 <p>
-  <strong>Content:</strong>
-  <%= @post.content %>
+List Comments
 </p>
+
+<ul>
+
+<% @comments.each do |c| %>
+
+<li> <%= c.content %> </li>
+
+
+<%end %> 
+</ul>
+<br />
+
+<%= render 'comment_form' %>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

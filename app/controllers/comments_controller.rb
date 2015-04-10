@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
    
    if @comment.save
 
-   	redirect_to root_path
+   	redirect_to post_path(@comment.post)
 
    else
 
@@ -31,6 +31,6 @@ class CommentsController < ApplicationController
   private
 
   def post_params
-      params.require(:comment).permit(:content)
+      params.require(:comment).permit(:content, :post_id)
     end
 end
